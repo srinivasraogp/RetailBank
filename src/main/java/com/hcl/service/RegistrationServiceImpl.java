@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hcl.dto.RegistrationRequestDTO;
-import com.hcl.dto.RegistrationResponseDTO;
 import com.hcl.entity.Registration;
 import com.hcl.repository.RegistrationRepository;
 

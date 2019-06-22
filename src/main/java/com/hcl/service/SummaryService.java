@@ -1,9 +1,9 @@
 package com.hcl.service;
 
-import com.hcl.entity.Registration;
+import com.hcl.dto.RegistrationDTO;
 
 public interface SummaryService {
 
-	Registration accountSummaryDetails(Long userId);
+	RegistrationDTO accountSummaryDetails(Long userId);
 
 }
