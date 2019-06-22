@@ -17,6 +17,7 @@
 	<properties>
 
 		<java.version>1.8</java.version>
+		<sonar.coverage.exclusions>**/com/hcl/entity/*.java,**/com/hcl/dto/*.java</sonar.coverage.exclusions>
 
 	</properties>
 
