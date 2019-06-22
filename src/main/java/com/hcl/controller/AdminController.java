@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hcl.dto.AdminResDTO;
 import com.hcl.entity.Admin;
 import com.hcl.service.AdminService;
 
@@ -18,9 +19,9 @@ public class AdminController {
 	private AdminService adminService;
 
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody Admin admin) {
-		String message =adminService.login(admin);
-		return new ResponseEntity<>(message,HttpStatus.OK);
+	public ResponseEntity<AdminResDTO> login(@RequestBody Admin admin) {
+	AdminResDTO adminResDto =adminService.login(admin);
+		return new ResponseEntity<>(adminResDto,HttpStatus.OK);
 	}
 
 }
