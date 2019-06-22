@@ -1,125 +1,91 @@
-package com.hcl.entity;
+package com.hcl.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
-public class Registration implements Serializable {
+public class RegistrationRequestDTO implements Serializable {
 
 	/**
+	
 	 * 
+	
 	 */
-	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	private static final long serialVersionUID = 1L;
+	@JsonProperty
 
 	private long regId;
 
+	@JsonProperty
+
 	private String firstName;
+
+	@JsonProperty
 
 	private String lastName;
 
+	@JsonProperty
+
 	private String email;
+	@JsonProperty
 
 	private long contactNumber;
 
+	@JsonProperty
+
 	private String city;
+	@JsonProperty
 
 	private String accountType;
-
-	private long userId;
-
-	private String password;
-
-	private long accountNumber;
-
+	public RegistrationRequestDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public long getRegId() {
 		return regId;
 	}
-
 	public void setRegId(long regId) {
 		this.regId = regId;
 	}
-
 	public String getFirstName() {
 		return firstName;
 	}
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
 	public String getLastName() {
 		return lastName;
 	}
-
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	public long getContactNumber() {
 		return contactNumber;
 	}
-
 	public void setContactNumber(long contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-
 	public String getCity() {
 		return city;
 	}
-
 	public void setCity(String city) {
 		this.city = city;
 	}
-
 	public String getAccountType() {
 		return accountType;
 	}
-
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-
-	public long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(long userId) {
-		this.userId = userId;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public long getAccountNumber() {
-		return accountNumber;
-	}
-
-	public void setAccountNumber(long accountNumber) {
-		this.accountNumber = accountNumber;
-	}
-
-	public Registration(long regId, String firstName, String lastName, String email, long contactNumber, String city,
-			String accountType, long userId, String password, long accountNumber) {
+	public RegistrationRequestDTO(long regId, String firstName, String lastName, String email, long contactNumber,
+			String city, String accountType) {
 		super();
 		this.regId = regId;
 		this.firstName = firstName;
@@ -128,16 +94,8 @@ public class Registration implements Serializable {
 		this.contactNumber = contactNumber;
 		this.city = city;
 		this.accountType = accountType;
-		this.userId = userId;
-		this.password = password;
-		this.accountNumber = accountNumber;
 	}
 
-	public Registration() {
-		super();
-	}
 
-	
-	
 
 }
