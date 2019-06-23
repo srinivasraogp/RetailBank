@@ -9,33 +9,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hcl.dto.AccountRequestDTO;
+import com.hcl.dto.AccountResponseDTO;
 import com.hcl.dto.RegistrationRequestDTO;
 import com.hcl.dto.RegistrationResponseDTO;
-import com.hcl.service.RegistrationService;
+import com.hcl.service.AccountService;
 
 @RestController
 
 @RequestMapping("/ingretail")
 
 @CrossOrigin(allowedHeaders = { "*", "*/" }, origins = { "*", "*/" })
-
-public class RegistrationController {
-
+public class AccountController {
 	@Autowired
 
-	RegistrationService registrationService;
+	AccountService accountService;
 
-	@PostMapping("/registration")
+	@PostMapping("/account")
+	public ResponseEntity<AccountResponseDTO> createAccount(@RequestBody AccountRequestDTO accountRequestDTO) {
 
-	public ResponseEntity<RegistrationResponseDTO> registerCustomer(
-			@RequestBody RegistrationRequestDTO registrationRequestDto) {
+		accountService.createAccount(accountRequestDTO);
+		AccountResponseDTO accountResponseDTO=new AccountResponseDTO();
+		accountResponseDTO.setMessage("You have been Successfully Registered");
 
-		 registrationService.registerCustomer(registrationRequestDto);
-		RegistrationResponseDTO registrationResponseDto= new RegistrationResponseDTO();
-		
-		
-
-		return new ResponseEntity<>(registrationResponseDto, HttpStatus.CREATED);
+			return new ResponseEntity<>(accountResponseDTO, HttpStatus.CREATED);
 
 	}
+
 }

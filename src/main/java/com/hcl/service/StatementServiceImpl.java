@@ -29,6 +29,7 @@ public class StatementServiceImpl implements StatementService {
 			statementsDto.setDescription(transaction.getDescription());
 			statementsDto.setFromAccount(transaction.getFromAccount());
 			statementsDto.setToAccount(transaction.getToAccount());
+			statementsDto.setBalance(transaction.getBalance());
 			
 			if(transaction.getFromAccount().longValue() == accountNumber) {
 				statementsDto.setTransactionType("Dr");
