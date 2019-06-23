@@ -16,6 +16,7 @@ import com.hcl.service.TransactionServiceImpl;
 @RestController
 @RequestMapping(value="/ingretail")
 @CrossOrigin(allowedHeaders = { "*", "*/" }, origins = { "*", "*/" })
+
 public class TransactionController {
 	
 	@Autowired
