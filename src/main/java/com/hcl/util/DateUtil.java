@@ -5,12 +5,10 @@ import java.util.Date;
 
 public class DateUtil {
 
-public static Date dateconvert(Date date)	{
+public static Date dateconvert()	{
 	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
     try {  
-        Date dateformated = formatter.parse(date.toString());  
-        System.out.println("Date is: "+dateformated);  
-        return dateformated;
+        Date date = formatter.parse("31/03/2015");       
     } catch (ParseException e) {e.printStackTrace();}
 	return null;  
 }  

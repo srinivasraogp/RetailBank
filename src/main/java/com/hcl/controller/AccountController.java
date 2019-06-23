@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hcl.dto.AccountRequestDTO;
 import com.hcl.dto.AccountResponseDTO;
-import com.hcl.dto.RegistrationRequestDTO;
-import com.hcl.dto.RegistrationResponseDTO;
 import com.hcl.service.AccountService;
 
 @RestController
