@@ -39,8 +39,6 @@ public class Registration implements Serializable {
 
 	private String password;
 
-	private long accountNumber;
-
 	public long getRegId() {
 		return regId;
 	}
@@ -113,16 +111,12 @@ public class Registration implements Serializable {
 		this.password = password;
 	}
 
-	public long getAccountNumber() {
-		return accountNumber;
-	}
-
-	public void setAccountNumber(long accountNumber) {
-		this.accountNumber = accountNumber;
+	public Registration() {
+		super();
 	}
 
 	public Registration(long regId, String firstName, String lastName, String email, long contactNumber, String city,
-			String accountType, long userId, String password, long accountNumber) {
+			String accountType, long userId, String password) {
 		super();
 		this.regId = regId;
 		this.firstName = firstName;
@@ -133,11 +127,10 @@ public class Registration implements Serializable {
 		this.accountType = accountType;
 		this.userId = userId;
 		this.password = password;
-		this.accountNumber = accountNumber;
 	}
 
-	public Registration() {
-		super();
-	}
+
+
+	
 
 }
