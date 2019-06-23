@@ -29,7 +29,6 @@ public class SummaryController {
 	public ResponseEntity<RegistrationDTO> accountSummary(@PathVariable Long userId){
 		LOGGER.debug("accountSummary of user id :"+userId);
 		RegistrationDTO registrationDTO=summaryService.accountSummaryDetails(userId);
-		registrationDTO.setBalance(0);
 		return new ResponseEntity<>(registrationDTO,HttpStatus.OK);
 	}
 
