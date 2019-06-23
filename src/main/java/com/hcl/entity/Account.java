@@ -8,17 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
-package com.hcl.entity;
-
-import java.io.Serializable;
-import java.math.BigDecimal;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 @Entity
 public class Account implements Serializable {
 
