@@ -46,7 +46,7 @@ public class ManageServiceImpl implements ManageService{
 		Registration reg = adminRepository.findByRegId(regId);
 		if(reg != null) {
 		   reg.setUserId(RandomNumberGen.getUserIdNumber());
-		   reg.setAccountNumber(RandomNumberGen.getAccountNumber());
+		
 		   reg.setPassword(RandomNumberGen.getPassWord(reg.getFirstName()));
 		}else {
 			throw new DataNotFoundException("User not found to approve");

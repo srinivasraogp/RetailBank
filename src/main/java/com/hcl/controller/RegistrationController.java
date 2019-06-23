@@ -32,7 +32,7 @@ public class RegistrationController {
 
 		 registrationService.registerCustomer(registrationRequestDto);
 		RegistrationResponseDTO registrationResponseDto= new RegistrationResponseDTO();
-		registrationResponseDto.setMessage("You have been Successfully Registered");
+		
 		
 
 		return new ResponseEntity<>(registrationResponseDto, HttpStatus.CREATED);
