@@ -13,9 +13,18 @@ public class StatementResDto {
 	private Long fromAccount;
 	
 	private Long toAccount;
+	private BigDecimal balance;
 
 	public Date getTransactiondate() {
 		return transactiondate;
+	}
+
+	public BigDecimal getBalance() {
+		return balance;
+	}
+
+	public void setBalance(BigDecimal balance) {
+		this.balance = balance;
 	}
 
 	public void setTransactiondate(Date transactiondate) {

@@ -20,6 +20,17 @@ public class Transaction {
 	private Long toAccount;
 	@Column
 	private String description;
+	public BigDecimal getBalance() {
+		return balance;
+	}
+
+	public void setBalance(BigDecimal balance) {
+		this.balance = balance;
+	}
+
+	@Column
+	private BigDecimal balance;
+	
 	public Long getTansactionId() {
 		return tansactionId;
 	}
