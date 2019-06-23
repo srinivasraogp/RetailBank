@@ -23,6 +23,15 @@ extends ResponseEntityExceptionHandler {
 	
 	
 	@ExceptionHandler(value 
+			= { InvalidTransactionDataException.class, MinimumBalanceException.class })
+	protected ResponseEntity<ErrorResponse> handleApplicationException(
+			RuntimeException ex, WebRequest request) {
+		ErrorResponse response = new ErrorResponse();
+		response.setMessage(ex.getMessage());
+		return new ResponseEntity<>(response, HttpStatus.PRECONDITION_FAILED);
+	}
+	
+	@ExceptionHandler(value 
 			= { DataNotFoundException.class })
 	protected ResponseEntity<ErrorResponse> handleApplicationDataNotFoundException(
 			RuntimeException ex, WebRequest request) {

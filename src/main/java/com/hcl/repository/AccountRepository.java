@@ -10,5 +10,8 @@ import com.hcl.entity.Account;
 public interface AccountRepository extends JpaRepository<Account, Long>{
 @Query(value="select * from account where user_id=?1 ",nativeQuery=true)
 	List<Account> findByUserId(Long userId);
+@Query(value="select * from Account where account_Number=?1",nativeQuery=true)
+Account findByAccountNumber(Long fromAccountId);
+
 
 }

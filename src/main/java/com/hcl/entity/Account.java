@@ -1,6 +1,7 @@
 package com.hcl.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +23,7 @@ public class Account implements Serializable {
     private String userId;
     private String accountNumber;
     private String accountType;
-    private long balance;
+    private BigDecimal balance;
     public long getId() {
         return id;
     }
@@ -47,13 +48,13 @@ public class Account implements Serializable {
     public void setAccountType(String accountType) {
         this.accountType = accountType;
     }
-    public long getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
-    public void setBalance(long balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
-    public Account(long id, String userId, String accountNumber, String accountType, long balance) {
+    public Account(long id, String userId, String accountNumber, String accountType, BigDecimal balance) {
         super();
         this.id = id;
         this.userId = userId;
