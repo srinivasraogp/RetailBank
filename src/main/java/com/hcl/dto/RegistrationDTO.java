@@ -1,5 +1,11 @@
 package com.hcl.dto;
 
+import java.util.List;
+
+import javax.persistence.OneToMany;
+
+import com.hcl.entity.Account;
+
 public class RegistrationDTO {
 	
 	private long regId;
@@ -20,16 +26,19 @@ public class RegistrationDTO {
 
 	private String password;
 
-	private long accountNumber;
-	private double balance;
+	
+	@OneToMany
+	private List<Account>  accounts;
 
-	public double getBalance() {
-		return balance;
+	public List<Account> getAccounts() {
+		return accounts;
 	}
 
-	public void setBalance(double balance) {
-		this.balance = balance;
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
 	}
+
+
 
 	public long getRegId() {
 		return regId;
@@ -103,12 +112,6 @@ public class RegistrationDTO {
 		this.password = password;
 	}
 
-	public long getAccountNumber() {
-		return accountNumber;
-	}
-
-	public void setAccountNumber(long accountNumber) {
-		this.accountNumber = accountNumber;
-	}
+	
 
 }
