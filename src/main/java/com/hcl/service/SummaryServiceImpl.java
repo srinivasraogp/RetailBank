@@ -24,7 +24,7 @@ public class SummaryServiceImpl implements SummaryService{
 		
 		LOGGER.debug("get accountSummaryDetails by userid  :  "+userId);
 		RegistrationDTO registrationDTO=new RegistrationDTO();
-		Registration  registration=	registrationRepository.findById(userId).orElse(null);
+		Registration  registration=	registrationRepository.findByUserId(userId);
 		BeanUtils.copyProperties(registration, registrationDTO);
 		return registrationDTO;
 	}

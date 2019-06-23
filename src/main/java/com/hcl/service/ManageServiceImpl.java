@@ -3,12 +3,15 @@ package com.hcl.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import com.hcl.controller.ManagerController;
 import com.hcl.dto.RegistrationDetailsResDTO;
 import com.hcl.entity.Registration;
 import com.hcl.exception.DataNotFoundException;
@@ -16,6 +19,7 @@ import com.hcl.repository.ManageRepository;
 import com.hcl.util.RandomNumberGen;
 @Service
 public class ManageServiceImpl implements ManageService{
+	private Logger logger = LoggerFactory.getLogger(ManageServiceImpl.class);
 
 	@Autowired
 	ManageRepository adminRepository;
@@ -27,7 +31,9 @@ public class ManageServiceImpl implements ManageService{
 	@Override
 	public List<RegistrationDetailsResDTO> getRegistrationDetails() {
 		List<RegistrationDetailsResDTO> registrationDetailsResDTO = new ArrayList<>();
+		logger.info("starts get registration details in service");
 		List<Registration>  regList = adminRepository.findByUsersbyZero();
+		logger.info("starts get registration details in service");
 		for(Registration regrec:regList) {
 			RegistrationDetailsResDTO regdto = new RegistrationDetailsResDTO();
 			BeanUtils.copyProperties(regrec, regdto);
@@ -45,7 +51,9 @@ public class ManageServiceImpl implements ManageService{
 		}else {
 			throw new DataNotFoundException("User not found to approve");
 		}
+		logger.info("starts approve registration details in service");
 		adminRepository.save(reg);	
+		logger.info("starts approve registration details in service");
 		try{
 			sendMail(reg.getUserId(),reg.getPassword(),reg.getFirstName());
 			System.out.println("Email sent successfully...");
