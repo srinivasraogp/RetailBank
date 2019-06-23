@@ -1,10 +1,11 @@
 package com.hcl.service;
 
 import com.hcl.dto.AccountRequestDTO;
+import com.hcl.dto.AccountResponseDTO;
 import com.hcl.entity.Account;
 
 public interface AccountService {
 
-	Account createAccount(AccountRequestDTO accountRequestDTO);
+	AccountResponseDTO createAccount(AccountRequestDTO accountRequestDTO);
 
 }
