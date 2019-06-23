@@ -4,10 +4,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Transaction {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO) 
@@ -18,6 +20,17 @@ public class Transaction {
 	private Long toAccount;
 	@Column
 	private String description;
+	public BigDecimal getBalance() {
+		return balance;
+	}
+
+	public void setBalance(BigDecimal balance) {
+		this.balance = balance;
+	}
+
+	@Column
+	private BigDecimal balance;
+	
 	public Long getTansactionId() {
 		return tansactionId;
 	}
