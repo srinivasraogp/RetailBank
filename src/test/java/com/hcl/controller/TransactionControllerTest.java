@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hcl.dto.TransactionReqDTO;
-import com.hcl.service.FundTransaferResponse;
+import com.hcl.dto.FundTransaferResponse;
 import com.hcl.service.TransactionServiceImpl;
 
 @RunWith(SpringRunner.class)
