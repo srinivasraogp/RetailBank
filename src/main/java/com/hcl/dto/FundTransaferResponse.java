@@ -1,4 +1,4 @@
-package com.hcl.service;
+package com.hcl.dto;
 
 public class FundTransaferResponse {
 	private String setMessage;
